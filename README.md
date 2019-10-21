@@ -1,4 +1,7 @@
-#Benchmarking-postgres
+Benchmarking-postgres:
+------------------------------
+
+This contains scripts to benchmark PostgreSQL database server using pgbench and HammerDB.
 
 Install the server:
 ------------------------------
