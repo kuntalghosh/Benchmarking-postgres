@@ -1,0 +1,39 @@
+#!/bin/bash
+
+#set postgres and hammerdb paths
+export PGINST=/home/edb/Projects/PG1/postgres/install/
+export HDBINST=/home/edb/Downloads/HammerDB/HammerDB-3.2
+
+# Run hammaer db tests
+read -r -d '' VAR << EOM
+# Add postgresql parameters here
+shared_buffers = 1GB
+max_connections = 200
+min_wal_size = 1GB
+max_wal_size = 1GB
+checkpoint_timeout = 900
+maintenance_work_mem = 1GB
+checkpoint_completion_target = 0.9
+synchronous_commit = on
+EOM
+export PG_OPTIONS=$VAR
+cd HammerDB
+./run_hammerdb
+cd ..
+
+#Run pgbench tests
+read -r -d '' VAR << EOM
+# Add postgresql parameters here
+shared_buffers = 1GB
+max_connections = 200
+min_wal_size = 1GB
+max_wal_size = 1GB
+checkpoint_timeout = 900
+maintenance_work_mem = 1GB
+checkpoint_completion_target = 0.9
+synchronous_commit = on
+EOM
+export PG_OPTIONS=$VAR
+cd PGBench
+./run_pgbench
+cd ..
