@@ -36,7 +36,7 @@ else
 	wal_folder_name=pg_wal
 fi
 
-log_dir+=/$version
+log_dir+=/log_$version
 rm -rf $log_dir
 mkdir $log_dir
 

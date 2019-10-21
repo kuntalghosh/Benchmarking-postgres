@@ -2,9 +2,11 @@
 
 #set postgres and hammerdb paths
 export PGINST=/usr/pgsql-12/
-export HDBINST=/home/centos/HammerDB/HammerDB-3.2
+export HDBINST=/home/centos/HammerDB-3.2
 
-# Run hammaer db tests
+# Template to run hammaer db tests
+
+# You can add postgresql parameters here
 read -r -d '' VAR << EOM
 # Add postgresql parameters here
 shared_buffers = 1GB
@@ -21,7 +23,9 @@ cd HammerDB
 ./run_hammerdb
 cd ..
 
-#Run pgbench tests
+# Template to run pgbench tests
+
+# You can add postgresql parameters here
 read -r -d '' VAR << EOM
 # Add postgresql parameters here
 shared_buffers = 1GB
@@ -37,3 +41,5 @@ export PG_OPTIONS=$VAR
 cd PGBench
 ./run_pgbench
 cd ..
+
+#Add more tests here
