@@ -36,9 +36,10 @@ tar -zxvf HammerDB-3.0.tar.gz
 Run benchmarking
 ------------------------------
 
-1. Edit run_tests and set the following two parameters:
+1. Edit run_tests and set the following postgres folder and hammerdb folder in
+the following two variables respectively:
 
-		export PGINST=/usr/pgsql-12/bin/
+		export PGINST=/usr/pgsql-12/
 		export HDBINST=/home/centos/HammerDB/HammerDB-3.2
 
 2. Add/modify the postgresql parameters in run_tests.

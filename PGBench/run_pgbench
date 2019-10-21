@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#PGINST=/usr/pgsql-12/bin/
+#PGINST=/usr/pgsql-12/
 
 current_dir=$(pwd)
 datadir=$current_dir/data

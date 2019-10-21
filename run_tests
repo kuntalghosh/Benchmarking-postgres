@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #set postgres and hammerdb paths
-export PGINST=/home/edb/Projects/PG1/postgres/install/
-export HDBINST=/home/edb/Downloads/HammerDB/HammerDB-3.2
+export PGINST=/usr/pgsql-12/
+export HDBINST=/home/centos/HammerDB/HammerDB-3.2
 
 # Run hammaer db tests
 read -r -d '' VAR << EOM
