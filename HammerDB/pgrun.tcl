@@ -35,12 +35,12 @@ print dict
 vuset logtotemp 1
 loadscript
 puts "SEQUENCE STARTED"
-foreach z { 1 2 4 } {
+foreach z { 1 16 32 48 64 96 128 } {
 puts "$z VU TEST"
 vuset vu $z
 vucreate
 vurun
-runtimer [expr [lindex $argv 0] + [lindex $argv 1] + 120]
+runtimer [expr [lindex $argv 0] * 60 + [lindex $argv 1] * 60 + 120 * 60]
 vudestroy
 after 5000
 }

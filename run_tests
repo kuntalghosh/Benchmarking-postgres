@@ -1,22 +1,23 @@
 #!/bin/bash
 
 #set postgres and hammerdb paths
-export PGINST=/usr/pgsql-12/
-export HDBINST=/home/centos/HammerDB-3.2
+export PGINST=/data/kuntal.ghosh/Postgresql/pg/postgresql/install/
+export HDBINST=/data/kuntal.ghosh/Postgresql/HammerDB-3.2/
 
 # Template to run hammaer db tests
 
 # You can add postgresql parameters here
 read -r -d '' VAR << EOM
 # Add postgresql parameters here
-shared_buffers = 1GB
+shared_buffers = 100GB
 max_connections = 200
-min_wal_size = 1GB
-max_wal_size = 1GB
+min_wal_size = 20GB
+max_wal_size = 40GB
 checkpoint_timeout = 900
 maintenance_work_mem = 1GB
 checkpoint_completion_target = 0.9
 synchronous_commit = on
+log_checkpoints = on
 EOM
 export PG_OPTIONS=$VAR
 cd HammerDB
@@ -28,14 +29,15 @@ cd ..
 # You can add postgresql parameters here
 read -r -d '' VAR << EOM
 # Add postgresql parameters here
-shared_buffers = 1GB
+shared_buffers = 100GB
 max_connections = 200
-min_wal_size = 1GB
-max_wal_size = 1GB
+min_wal_size = 20GB
+max_wal_size = 40GB
 checkpoint_timeout = 900
 maintenance_work_mem = 1GB
 checkpoint_completion_target = 0.9
 synchronous_commit = on
+log_checkpoints = on
 EOM
 export PG_OPTIONS=$VAR
 cd PGBench
