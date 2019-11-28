@@ -5,8 +5,8 @@
 
 current_dir=$(pwd)
 datadir=$current_dir/data
-bck_datadir=$current_dir/data.bck
-wal_dir=$current_dir/
+bck_datadir=/data/ssd2/centos/data.bck
+wal_dir=/data/ssd2/centos/
 log_dir=$current_dir/Logs
 resultfile_prefix=$current_dir/Results/hammerdb
 
